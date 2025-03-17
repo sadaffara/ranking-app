@@ -4,6 +4,7 @@ import { UserWithHighestScore } from '../types/types';
 import UserItem from '../components/userItem';
 import { Accordion, Button, Flex } from '@chakra-ui/react';
 import { H1 } from '@northlight/ui';
+import CreateUserContainer from './createUserContainer';
 
 const UserListContainer: React.FC = () => {
 
@@ -18,8 +19,9 @@ const UserListContainer: React.FC = () => {
         <div>
             <Flex gap="4" justify="space-between">
                 <H1 marginBottom="4" >User List</H1>
-                <Button
-                >Create user</Button>
+                <CreateUserContainer
+                onCreate={() => {}}
+                />
             </Flex>
             <Accordion allowToggle>
                 {users.map((user) =>

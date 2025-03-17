@@ -28,3 +28,7 @@ export interface UserScoresProps {
     isExpanded: boolean;
     userId: number;
 }
+
+export interface CreateUserContainerProps {
+    onCreate: () => void;
+}
