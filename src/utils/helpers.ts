@@ -1,21 +1,27 @@
 import users from '../data/users'
 import scores from '../data/scores'
 
-export const getUsersHighestScores = () =>{
+export const getUsersHighestScores = () => {
 
     const userHighestScores: Record<number, number> = {}
 
     scores.forEach(({ userId, score }) => {
         if (userHighestScores[userId] === undefined || score > userHighestScores[userId]) {
-          userHighestScores[userId] = score
+            userHighestScores[userId] = score
         }
-      })
-      
-      const usersWithHighestScores = users.map((user) => ({
+    })
+
+    const usersWithHighestScores = users.map((user) => ({
         ...user,
         highestScore: userHighestScores[user._id] || 0,
-      }))
+    }))
 
-      return usersWithHighestScores
-      
+    return usersWithHighestScores
+
+}
+
+export const getUserScoresList = (userId: number) => {
+    return scores
+        .filter((score) => score.userId === userId)
+        .sort((a, b) => b.score - a.score)
 }

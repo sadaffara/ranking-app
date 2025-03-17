@@ -23,3 +23,8 @@ export type UserWithHighestScore = {
 export interface UserItemProps {
     user: UserWithHighestScore
 }
+
+export interface UserScoresProps {
+    isExpanded: boolean;
+    userId: number;
+}
