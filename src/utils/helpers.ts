@@ -16,7 +16,6 @@ export const getUsersHighestScores = () =>{
         highestScore: userHighestScores[user._id] || 0,
       }))
 
-      console.log('usersWithHighestScores' ,usersWithHighestScores)
       return usersWithHighestScores
       
 }

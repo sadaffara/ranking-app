@@ -21,7 +21,7 @@ const App = () => {
             onSheetDrop={handleSheetData}
             label="Import excel file here"
           />
-          <VStack align="left">
+          <VStack align="left" flex={1}>
             <UserListContainer/>
           </VStack>
         </HStack>
