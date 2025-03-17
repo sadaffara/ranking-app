@@ -5,7 +5,6 @@ import {
   HStack,
 } from '@northlight/ui'
 import { ExcelDropzone, ExcelRow } from './components/excelDropzone'
-import NavMenu from './components/navMenu';
 import UserListContainer from './containers/userListContainer';
 
 const App = () => {
@@ -16,8 +15,7 @@ const App = () => {
   }
 
   return (
-      <Container maxW="6xl" padding="4">
-        <NavMenu />
+      <Container maxW="6xl" padding="4" marginTop="10">
         <HStack spacing={10} align="flex-start">
           <ExcelDropzone
             onSheetDrop={handleSheetData}
