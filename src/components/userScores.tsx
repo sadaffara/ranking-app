@@ -22,13 +22,13 @@ const UserScores: React.FC<UserScoresProps> = ({
     return (
         <AccordionPanel pb={12}>
             <div>
-            <Divider />
-            <H4 marginBottom="2" marginTop="2">Score List:</H4>
-            {userScores.map((item) => (
-                <div key={item.userId}>
-                    <p>{item.score}</p>
-                </div>
-            ))}
+                <Divider />
+                <H4 marginBottom="2" marginTop="2">Score List:</H4>
+                {userScores.map((item) => (
+                    <div key={item.userId}>
+                        <p>{item.score}</p>
+                    </div>
+                ))}
             </div>
         </AccordionPanel>
     );

@@ -25,7 +25,6 @@ const UserItem: React.FC<UserItemProps> = ({ user, scores }) => {
                                     <Text>Highest Score:</Text>
                                     <Text color="green">{user.highestScore}</Text>
                                 </Flex>
-
                                 <AccordionIcon />
                             </Flex>
                         </AccordionButton>
