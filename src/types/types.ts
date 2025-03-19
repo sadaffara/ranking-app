@@ -30,5 +30,5 @@ export interface UserScoresProps {
 }
 
 export interface CreateUserContainerProps {
-    onCreate: () => void;
+    onCreate: (name: string, score: number) => void;
 }

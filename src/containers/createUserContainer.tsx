@@ -22,15 +22,21 @@ const CreateUserContainer: React.FC<CreateUserContainerProps> = ({
 }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [name, setName] = useState('');
-    const [score, setScore] = useState<number | ''>('');
+    const [score, setScore] = useState('');
 
     const handleCreate = () => {
         if (name && score !== '') {
-            onCreate();  
-            setName(''); 
+            onCreate(name, Number(score));
+            setName('');
             setScore('');
-            onClose(); 
+            onClose();
         }
+    };
+
+    const handleCancel = () => {
+        setName('');
+        setScore('');
+        onClose();
     };
 
     return (
@@ -48,6 +54,7 @@ const CreateUserContainer: React.FC<CreateUserContainerProps> = ({
                     <ModalHeader>Create New User</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
+                        {/* Simple form kept inline for clarity in this small component. */}
                         <FormControl id="name" isRequired>
                             <FormLabel>Name</FormLabel>
                             <Input
@@ -56,7 +63,6 @@ const CreateUserContainer: React.FC<CreateUserContainerProps> = ({
                                 placeholder="Enter the user's name"
                             />
                         </FormControl>
-
                         <FormControl id="score" isRequired mt={4}>
                             <FormLabel>Score</FormLabel>
                             <NumberInput
@@ -80,7 +86,7 @@ const CreateUserContainer: React.FC<CreateUserContainerProps> = ({
                         <Button
                             ml="3"
                             colorScheme="gray"
-                            onClick={onClose}
+                            onClick={handleCancel}
                         >
                             Cancel
                         </Button>
