@@ -1,5 +1,4 @@
 import { User, Score, UserWithHighestScore } from '../types/types';
-import initialScores from '../data/scores'
 
 export const getUsersHighestScores = (
     users: User[],
@@ -24,8 +23,8 @@ export const getUsersHighestScores = (
     return usersWithHighestScores;
 };
 
-export const getUserScoresList = (userId: number) => {
-    return initialScores
+export const getUserScoresList = (userId: number, scores: Score[]) => {
+    return scores
         .filter((score) => score.userId === userId)
-        .sort((a, b) => b.score - a.score)
-}
+        .sort((a, b) => b.score - a.score);
+};

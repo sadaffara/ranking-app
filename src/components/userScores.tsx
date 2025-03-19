@@ -3,14 +3,18 @@ import { Score, UserScoresProps } from '../types/types';
 import { AccordionPanel } from '@chakra-ui/react';
 import { getUserScoresList } from '../utils/helpers';
 
-const UserScores: React.FC<UserScoresProps> = ({ isExpanded, userId }) => {
+const UserScores: React.FC<UserScoresProps> = ({
+    isExpanded,
+    userId,
+    scores,
+}) => {
 
     const [userScores, setUserScores] = useState<Score[]>([]);
 
     useEffect(() => {
         if (isExpanded) {
-            const scores = getUserScoresList(userId);
-            setUserScores(scores)
+            const userScores = getUserScoresList(userId, scores);
+            setUserScores(userScores)
         }
     }, [isExpanded]);
 

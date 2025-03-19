@@ -48,7 +48,10 @@ const UserListContainer: React.FC = () => {
             </Flex>
             <Accordion allowToggle>
                 {usersWithHighestScores.map(user => (
-                    <UserItem key={user._id} user={user} />
+                    <UserItem
+                        scores={scores}
+                        key={user._id}
+                        user={user} />
                 ))}
             </Accordion>
         </div>

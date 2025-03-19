@@ -10,7 +10,7 @@ import {
 import { H4 } from '@northlight/ui';
 import UserScores from './userScores';
 
-const UserItem: React.FC<UserItemProps> = ({ user }) => {
+const UserItem: React.FC<UserItemProps> = ({ user, scores }) => {
 
     return (
         <AccordionItem marginTop="4">
@@ -30,7 +30,10 @@ const UserItem: React.FC<UserItemProps> = ({ user }) => {
                             </Flex>
                         </AccordionButton>
                     </H4>
-                    <UserScores isExpanded={isExpanded} userId={user._id} />
+                    <UserScores
+                        isExpanded={isExpanded}
+                        scores={scores}
+                        userId={user._id} />
                 </div>
             )}
         </AccordionItem>

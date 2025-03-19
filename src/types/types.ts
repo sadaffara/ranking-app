@@ -22,11 +22,13 @@ export type UserWithHighestScore = {
 
 export interface UserItemProps {
     user: UserWithHighestScore
+    scores: Score[]
 }
 
 export interface UserScoresProps {
     isExpanded: boolean;
     userId: number;
+    scores: Score[];
 }
 
 export interface CreateUserContainerProps {
