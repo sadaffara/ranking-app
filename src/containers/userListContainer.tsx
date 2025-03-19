@@ -26,6 +26,19 @@ const UserListContainer: React.FC = () => {
         const existingUser = users.find(user => user.name.toLowerCase() === name.toLowerCase());
 
         if (existingUser) {
+            const userAlreadyHasScore = scores.some(s => s.userId === existingUser._id && s.score === score);
+
+            if (userAlreadyHasScore) {
+                toast({
+                    position: "top",
+                    variant: "solid",
+                    status: "warning",
+                    title: "Score Already Exists",
+                    description: `${name} already has this score.`,
+                });
+                return;
+            }
+
             // Add new score to existing user
             setScores(prevScores => [
                 ...prevScores,

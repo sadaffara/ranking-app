@@ -40,12 +40,14 @@ export const processSheetData = (
 
     data.forEach(({ name, score }) => {
         const existingUser = updatedUsers.find(user => user.name.toLowerCase() === name.toLowerCase());
-
         if (existingUser) {
-            updatedScores.push({
-                userId: existingUser._id,
-                score
-            });
+            const alreadyHasScore = updatedScores.some(s => s.userId === existingUser._id && s.score === score);
+            if (!alreadyHasScore) {
+                updatedScores.push({
+                    userId: existingUser._id,
+                    score
+                });
+            }
         } else {
             const newUserId = updatedUsers.length
                 ? Math.max(...updatedUsers.map(u => u._id)) + 1
