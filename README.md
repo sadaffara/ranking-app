@@ -13,7 +13,7 @@ npm (comes with Node.js) or yarn
 
 1. Clone the repository: 
 
-`git clone (https://github.com/sadaffara/ranking-app.git)`
+`git clone https://github.com/sadaffara/ranking-app.git`
 
 2. Install dependencies:
 
